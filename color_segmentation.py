@@ -14,7 +14,7 @@ def cd_color_segmentation(img, show_image=False, color="r"):
     """
     # convert from rgb to hsv color space (it might be BGR)
     new_img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
-    new_img = new_img[11*new_img.shape[0]/20:5*new_img.shape[0]/6]
+    new_img = new_img[new_img.shape[0]/2:5*new_img.shape[0]/6]
 #    new_img = new_img[new_img.shape[1]/4:3*new_img.shape[1]/4]
 
     # define lower and upper bound of image values
@@ -22,7 +22,7 @@ def cd_color_segmentation(img, show_image=False, color="r"):
         low_range  = np.array( [ 0, 100, 150] ) #105, 200, 140
         high_range = np.array( [ 8, 250, 255] ) #130, 255, 255
     elif color=="b":
-        low_range  = np.array( [ 105, 120, 150] )
+        low_range  = np.array( [ 100, 110, 150] )
         high_range = np.array( [ 115, 255, 255] )
     elif color=="y":
         low_range  = np.array( [ 20, 150, 150] )
